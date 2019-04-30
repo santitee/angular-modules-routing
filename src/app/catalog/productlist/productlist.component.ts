@@ -1,7 +1,8 @@
-import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList, ViewChild } from '@angular/core';
 
 import { Product } from '../../product';
 import { ProductitemComponent } from '../productitem/productitem.component';
+import { BackendService } from '../../backend.service';
 
 @Component({
   selector: 'app-productlist',
@@ -11,30 +12,20 @@ import { ProductitemComponent } from '../productitem/productitem.component';
 export class ProductlistComponent implements OnInit {
   @ViewChildren(ProductitemComponent)
   productItems: QueryList<ProductitemComponent>;
-
   products: Product[];
 
-  constructor() {
+  //@ViewChild('productList')
+  //productList: ProductlistComponent;
+
+  productId: number;
+
+  constructor(private backendService: BackendService) {
     this.products = [];
-    this.products.push({
-      name: 'ส้มโอ',
-      price: 990
-    });
-    this.products.push({
-      name: 'แตงโม',
-      price: 1000
-    });
-    this.products.push({
-      name: 'มะพร้่าวน้ำหอม',
-      price: 500
-    });
-    this.products.push({
-      name: 'บูลเบอร์รี่',
-      price: 2000
-    });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.products = this.backendService.getProducts();
+  }
   selectedProduct(productComponent: ProductitemComponent) {
     alert(`Product ${productComponent.product.name} selected`);
     this.productItems.forEach(p => {
@@ -42,6 +33,5 @@ export class ProductlistComponent implements OnInit {
     });
     productComponent.isSelected = true;
   }
- 
 
 }

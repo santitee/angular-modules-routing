@@ -26,7 +26,7 @@ export class BackendService {
     });
   }
   getProducts(): Product[] {
-    return [];
+    return this.products;
   }
  
   getProductById(productId: number): Product {

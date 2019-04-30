@@ -4,6 +4,8 @@ import { ProductitemComponent } from './productitem/productitem.component';
 import { ProductlistComponent } from './productlist/productlist.component';
 import { PanelComponent } from './panel/panel.component';
 import { ProductdetailComponent } from './productdetail/productdetail.component';
+import { BackendService } from '../backend.service';
+
 
 @NgModule({
   declarations: [
@@ -12,6 +14,7 @@ import { ProductdetailComponent } from './productdetail/productdetail.component'
     PanelComponent,
     ProductdetailComponent
   ],
+  providers: [BackendService],
   imports: [
     CommonModule
   ],

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-import { BackendService } from './backend.service';
+//import { BackendService } from './backend.service';
 import { CatalogModule } from './catalog/catalog.module';
 import { HomeModule } from './home/home.module';
 import { HomeComponent } from './home/home.component';
@@ -13,6 +13,9 @@ import { ProductlistComponent } from './catalog/productlist/productlist.componen
 import { LoginComponent } from './home/login/login.component';
 import { PageNotFoundComponent } from './home/page-not-found/page-not-found.component';
 import { ProductdetailComponent } from './catalog/productdetail/productdetail.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
 
 const routes: Routes = [
   {
@@ -53,9 +56,11 @@ const routes: Routes = [
     CatalogModule,
     HomeModule,
     RouterModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
-  providers: [BackendService],
+  //providers: [BackendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
