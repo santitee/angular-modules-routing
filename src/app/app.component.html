@@ -1,21 +1,21 @@
 <div>
-    <app-home [title]="'home component 1'"></app-home>
+        <ul>
+          <li>
+            <a [routerLink]="['/']">Home</a>
+          </li>
+          <li>
+              <a [routerLink]="['/login']">Login</a>
+            </li>
+            <li>
+                <a [routerLink]="['/products']">Products</a>
+            </li>
+        </ul>
+     
 </div>
+       
+<div class="container">
 
-<div>
-    <h2>Product List</h2>
-    <app-productlist></app-productlist>
+    <router-outlet></router-outlet>
+       
 </div>
-   
-<div>
-    <h2>Product List</h2>
-    <app-productlist #productList></app-productlist>
- </div>
-<div>
-    <h2>Nav Bar</h2>
-    <app-navbar></app-navbar>
-</div>
-<div>
-    <h2>Main Content</h2>
-    <app-maincontent></app-maincontent>
-</div>
+       

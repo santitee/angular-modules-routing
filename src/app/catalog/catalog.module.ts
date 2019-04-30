@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { ProductitemComponent } from './productitem/productitem.component';
 import { ProductlistComponent } from './productlist/productlist.component';
 import { PanelComponent } from './panel/panel.component';
+import { ProductdetailComponent } from './productdetail/productdetail.component';
 
 @NgModule({
   declarations: [
     ProductitemComponent,
     ProductlistComponent,
-    PanelComponent
+    PanelComponent,
+    ProductdetailComponent
   ],
   imports: [
     CommonModule
